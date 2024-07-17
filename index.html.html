@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAM Simple Interest Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color:;
+            background-color:#003049;
+        }
+
+        .calculator {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 450px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin: 10px 0 5px;
+        }
+
+        input {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background: yellow;
+            color: black;
+            font-size: 16px;
+            cursor: pointer;
+            
+        }
+
+        button:hover {
+            background: #22b5b3;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        .heading{
+            color:#d62828;
+        }
+        .A{
+            
+        }
+        .B{
+            
+        }
+        .C{
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calculator">
+        <h1 class="heading">Simple Interest Calculator</h1>
+        <form id="interestForm">
+            <label class="A" for="principal"><strong>Principal Amount:</strong></label>
+            <input type="number" id="principal" name="principal" required>
+
+            <label class="B" for="rate"><strong>Rate of Interest( per 100rupees):</strong></label>
+            <input type="number" id="rate" name="rate" step="0.01" required>
+
+            <label class="C" for="time"><strong>Time(months)</strong>:</label>
+            <input type="number" id="time" name="time" required>
+
+            <button type="button" onclick="calculateInterest()"><strong>Calculate</strong></button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script>
+
+        function calculateInterest() {
+            // Get the values from the form
+            const principal = parseFloat(document.getElementById('principal').value);
+            const rate = parseFloat(document.getElementById('rate').value);
+            const time = parseFloat(document.getElementById('time').value);
+
+            // Calculate the simple interest
+            const interest = (principal * rate * time) / 100;
+
+            // Display the result
+            document.getElementById('result').innerText = `Simple Interest: RS - ${interest.toFixed(2)}`;
+        }
+
+    </script>
+</body>
+
+</html>        
